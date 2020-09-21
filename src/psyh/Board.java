@@ -44,14 +44,18 @@ public class Board {
     }
 
     public void printInfo(){
-        double area = 0;
         System.out.print("On the board ");
+        for (Shape shape : shapes) if (shape != null) System.out.print(shape + ", ");
+        System.out.printf("the total area is %.2f\n", getTotalArea());
+    }
+
+    public double getTotalArea(){
+        double area = 0;
         for (Shape shape : shapes) {
             if (shape != null) {
-                System.out.print(shape + ", ");
                 area += shape.getArea();
             }
         }
-        System.out.printf(" with a total area %.2f\n", area);
+        return area;
     }
 }

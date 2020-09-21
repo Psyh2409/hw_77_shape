@@ -7,9 +7,6 @@ public class Triangle extends Shape {
     private Point a;
     private Point b;
     private Point c;
-    private double ab;
-    private double bc;
-    private double ca;
 
     public Triangle() {
         super();
@@ -19,9 +16,6 @@ public class Triangle extends Shape {
         this.a = a;
         this.b = b;
         this.c = c;
-        ab = (a.distanceBetweenPoints(b));
-        bc = (b.distanceBetweenPoints(c));
-        ca = (c.distanceBetweenPoints(a));
     }
 
     public Point getA() {
@@ -74,11 +68,14 @@ public class Triangle extends Shape {
 
     @Override
     public double getPerimeter() {
-        return ab + bc + ca;
+        return a.distanceBetweenPoints(b) + b.distanceBetweenPoints(c) + c.distanceBetweenPoints(a);
     }
 
     @Override
     public double getArea() {
+        double ab = (a.distanceBetweenPoints(b));
+        double bc = (b.distanceBetweenPoints(c));
+        double ca = (c.distanceBetweenPoints(a));
         return Math.sqrt((ab + bc + ca) * (bc + ca - ab) * (ab + ca - bc) * (ab + bc - ca)) / 4;
     }
 }

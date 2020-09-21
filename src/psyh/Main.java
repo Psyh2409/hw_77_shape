@@ -17,11 +17,15 @@ public class Main {
         board.printInfo();
         board.putShape(circle);
         board.printInfo();
+        System.out.println(board);
         board.removeShape(square);
         board.printInfo();
         board.removeShape(triangle);
         board.printInfo();
         board.removeShape(circle);
         board.printInfo();
+
+        System.out.println();
+        System.out.println(board);
     }
 }
